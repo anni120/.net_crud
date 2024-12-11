@@ -1,0 +1,58 @@
+﻿@model IEnumerable<fullcrud.Models.Registration>
+@{
+    ViewBag.Title = "View_Register";
+    Layout = "~/Views/Shared/GeneralMaster.cshtml";
+}
+<link href="~/Content/font-awesome.min.css" rel="stylesheet" />
+<h2>View_Register</h2>
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<div class=" container" >
+    <div class=" row">
+        <table class=" table table-responsive table-hover text-center text-capitalize table-bordered" >
+            <thead class=" table-info">
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Mobile</th>
+                    <th>DOB</th>
+                    <th>Gender</th>
+                    <th>Adhar</th>
+                    <th>PAN</th>
+                    <th>Address</th>
+                    <th>Picture</th>
+                    <th>Password</th>
+                    <th>Action</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var i in Model)
+                {
+                    
+                    <tr>
+                        <td>@i.id</td>
+                        <td>@i.Name</td>
+                        <td>@i.Email</td>
+                        <td>@i.Mobile</td>
+                        <td>@i.DOB</td>
+                        <td>@i.Gender</td>
+                        <td>@i.Adhar_Number</td>
+                        <td>@i.Pan_Number</td>
+                        <td>@i.Address</td>
+                        <td><img src="~/Content/Reg_img/@i.file" style="height:70px;width:70px;" class="img img-thumbnail" /></td>
+                        <td>@i.Password</td>
+
+
+                        <td>
+                            <a href="/Home/Update_Register?up=@i.Email"><span class="btn btn-warning fa fa-trash">Update</span></a>&nbsp;&nbsp;
+                            <a href="/Home/Delete_Register?del=@i.Email"><span class="fa fa-edit btn btn-danger">Delete</span></a>
+                        </td>
+                    </tr>
+
+
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

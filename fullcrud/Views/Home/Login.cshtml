@@ -1,0 +1,44 @@
+﻿@model fullcrud.Models.Registration
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/GeneralMaster.cshtml";
+}
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+
+<h2>Login</h2>
+
+<div class="conainer fluid">
+    <div class=" row">
+        <div class=" col-4"></div>
+        <div class=" col-4">
+            <h3>Login Panel Here !</h3>
+            <hr />
+            @using (Html.BeginForm("Login","Home",FormMethod.Post))
+            {
+                @Html.LabelFor(model=>model.Email)
+                @Html.TextBoxFor(model => model.Email, new { @class="form-control"})
+                @Html.ValidationMessageFor(model => model.Email, "", new { @class="text-danger"})
+                
+                
+                @Html.LabelFor(model=>model.Password)
+                @Html.TextBoxFor(model => model.Password, new { @class="form-control"})
+                @Html.ValidationMessageFor(model => model.Password, "", new { @class="text-danger"})
+                <br />
+                <input type="submit" class="form-control btn btn-info" value="Login" />
+                  
+                
+               
+                
+                
+            }
+        </div>
+    </div>
+</div> 
+
+
+
+
+
+
+
+

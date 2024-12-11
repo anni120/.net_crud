@@ -1,0 +1,90 @@
+﻿@model fullcrud.Models.Registration
+@{
+    ViewBag.Title = "Register";
+    Layout = "~/Views/Shared/GeneralMaster.cshtml";
+}
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+
+<h2>Register</h2>
+<div class=" container-fluid">
+    <div class=" row">
+        <div class=" col-3"></div>
+        <div class=" col-6">
+            <h4>Registration Panel Here !</h4>
+            <hr />
+            @using(Html.BeginForm("Register","Home",FormMethod.Post,new {enctype="multipart/form-data"}))
+            {
+                <h3>@ViewBag.msg</h3>
+                
+                @Html.LabelFor(model=>model.Name)
+                @Html.TextBoxFor(model => model.Name, new { @class="form-control"})
+                @Html.ValidationMessageFor(model => model.Name, "", new { @class="text-danger"})
+                
+                
+                
+                
+                @Html.LabelFor(model=>model.Email)
+                @Html.TextBoxFor(model => model.Email, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                
+                
+                
+                @Html.LabelFor(model=>model.Mobile)
+                @Html.TextBoxFor(model => model.Mobile, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Mobile, "", new { @class = "text-danger" })
+                
+                
+                
+                @Html.LabelFor(model=>model.DOB)
+                @Html.TextBoxFor(model => model.DOB, new { @class="form-control",type="date"})
+                @Html.ValidationMessageFor(model => model.DOB, "", new { @class = "text-danger" })
+                
+                
+                @Html.LabelFor(model=>model.Gender)
+               @Html.DropDownListFor(model=>model.Gender,new SelectList(new [] {"male","female","other"}),"select Gender",new{@class="form-control"})
+               // @Html.TextBoxFor(model => model.Gender, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Gender, "", new { @class = "text-danger" })
+                
+                
+                
+                @Html.LabelFor(model=>model.Address)
+                @Html.TextBoxFor(model => model.Address, new { @class="form-control"})
+                @Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })
+                
+                
+                
+                @Html.LabelFor(model=>model.Adhar_Number)
+                @Html.TextBoxFor(model => model.Adhar_Number, new { @class="form-control"})
+                @Html.ValidationMessageFor(model => model.Adhar_Number, "", new { @class = "text-danger" })
+                
+                
+                
+                @Html.LabelFor(model=>model.Pan_Number)
+                @Html.TextBoxFor(model => model.Pan_Number, new { @class="form-control"})
+                @Html.ValidationMessageFor(model => model.Pan_Number, "", new { @class = "text-danger" })
+                
+                
+                @Html.LabelFor(model=>model.Pic)
+                @Html.TextBoxFor(model => model.Pic, new { @class = "form-control",type="file"})
+                @Html.ValidationMessageFor(model => model.Pic, "", new { @class = "text-danger" })
+                
+                
+                @Html.LabelFor(model=>model.Password)
+                @Html.TextBoxFor(model => model.Password, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                
+                
+                @Html.LabelFor(model=>model.Conform_Password)
+                @Html.TextBoxFor(model => model.Conform_Password, new { @class="form-control"})
+                @Html.ValidationMessageFor(model => model.Conform_Password, "", new { @class = "text-danger" })
+                
+                <br />
+                <input type="submit" class="form-control btn btn-info" value="submit form" />  
+                
+            }
+        </div>
+
+    </div>
+</div>
+
+
